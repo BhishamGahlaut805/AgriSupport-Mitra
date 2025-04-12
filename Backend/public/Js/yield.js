@@ -49,7 +49,7 @@ async function fetchPrediction(event) {
 }
 
 async function sendToGemini(result) {
-  const API_KEY = "AIzaSyBwAw7qquiXFpTxH_74x0WldA_r7jkh7mQ"; // 🔑 Replace with your Gemini API key
+  const API_KEY = "KEY4"; // 🔑 Replace with your Gemini API key
 
   const prompt = `
 You are a farmer-friendly AI agriculture assistant. Based on the following data:
