@@ -592,7 +592,7 @@ function getFarmingRecommendations(currentData, forecastData) {
 // 🌍 Geocode Location from Place Name
 async function geocodeLocation(placeName) {
   try {
-    const apiKey = "ef8402c587fc4a6c89b14d8a271f8004";
+    const apiKey = "KEY2";
     const url = `https://api.opencagedata.com/geocode/v1/json?q=${encodeURIComponent(
       placeName
     )}&key=${apiKey}`;
@@ -615,7 +615,7 @@ async function geocodeLocation(placeName) {
 // 📍 Reverse Geocode to Get City Name from Coordinates
 async function reverseGeocode(latitude, longitude) {
   try {
-    const apiKey = "ef8402c587fc4a6c89b14d8a271f8004";
+    const apiKey = "KEY3";
     const url = `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${apiKey}`;
     const response = await fetch(url);
     const data = await response.json();
