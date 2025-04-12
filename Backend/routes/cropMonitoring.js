@@ -20,7 +20,7 @@ router.use(bodyParser.urlencoded({ extended: true }));
 
 // ✅ Initialize Gemini API
 // const apiKey = process.env.GENERATIVE_API_KEY;
-const apiKey = "AIzaSyBwAw7qquiXFpTxH_74x0WldA_r7jkh7mQ";
+const apiKey = "KEY4";
 console.log("✅ Using API Key:", apiKey);
 
 const genAI = new GoogleGenerativeAI(apiKey);
