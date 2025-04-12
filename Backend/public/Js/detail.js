@@ -41,7 +41,7 @@
 
 // // ✅ Fetch IMD Advisory Using Gemini Pro 1.5
 // async function fetchIMDAdvisory(district) {
-//     const GEMINI_API_KEY = "AIzaSyBwAw7qquiXFpTxH_74x0WldA_r7jkh7mQ";  // Replace with your valid API Key
+//     const GEMINI_API_KEY = "";  // Replace with your valid API Key
 //     const url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent";
 
 //     const requestBody = {
@@ -86,7 +86,7 @@
 
 // ✅ Function to Get IMD Advisory from Gemini API
 // async function fetchIMDAdvisory(query) {
-//     const GEMINI_API_KEY = "AIzaSyBwAw7qquiXFpTxH_74x0WldA_r7jkh7mQ"; // 🔹 Replace with your valid API Key
+//     const GEMINI_API_KEY ; // 🔹 Replace with your valid API Key
 //     const url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent";
 
 //     const requestBody = {
