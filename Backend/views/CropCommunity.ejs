@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Disease Detection</title>
+
+    <!-- Bootstrap & Styles -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/utility.css">
+    <link rel="stylesheet" href="/CSS/weather.css">
+    <link rel="stylesheet" href="/CSS/crop.css">
+
+</head>
+
+<body>
+    <%- include("navbar"); %>
+
+        <!-- Hero Section -->
+        <div class="container-fluid hero-section text-center py-5"
+            style="background:  url('/images/card1.png') no-repeat center center/cover; height: 120%; max-height: 140vw; margin-top: 20px;">
+            <div class="container">
+                <h1 class="display-4 fw-bold text-white">🌿 Welcome to Crop Monitoring</h1>
+                <p class="lead text-white">Empowering Farmers with Smart Agriculture Solutions</p>
+                <a href="#crop-monitoring" class="btn btn-light btn-lg mt-3 fw-bold shadow-lg">🚀 Explore Features</a>
+            </div>
+        </div>
+<div class="maincont100">
+        <!-- Community Navbar -->
+        <div class="container-fluid mt-3 px-3 py-5">
+            <div class="d-flex justify-content-around bg-light p-3 rounded shadow"
+                style="width: 100%; max-width: 100vw;">
+                <button class="btn btn-primary fw-bold px-4 py-3" onclick="showSection('home')">🏠 Home</button>
+                <button class="btn btn-success fw-bold px-4 py-3" onclick="showSection('diseased-crop')">🌱 Diseased
+                    Crops</button>
+                <button class="btn btn-warning fw-bold px-4 py-3" onclick="showSection('solutions')">💡
+                    Solutions</button>
+                <button class="btn btn-danger fw-bold px-4 py-3" onclick="showSection('expert-talk')">🎤 Talk to Experts
+                    </button>
+                <button class="btn btn-dark fw-bold px-4 py-3" onclick="showSection('help')">❓ Help & Support</button>
+                <button class="btn btn-info fw-bold px-4 py-3" onclick="showSection('upload')">📤 Post Your Data</button>
+            </div>
+        </div>
+
+        <!-- Filter Box -->
+        <div class="container-fluid mt-3">
+            <div class="d-flex flex-wrap justify-content-center bg-light p-3 rounded shadow">
+                <input type="text" id="filter-crop" class="form-control me-2" placeholder="🌾 Crop Name" oninput="filterData()">
+                <input type="text" id="filter-location" class="form-control me-2" placeholder="📍 Location"
+                    oninput="filterData()">
+                <input type="text" id="filter-reported" class="form-control me-2" placeholder="👤 Reported By"
+                    oninput="filterData()">
+                <select id="filter-category" class="form-select me-2" onchange="filterData()">
+                    <option value="">📂 Category</option>
+                    <option value="Solution">💡 Solution</option>
+                    <option value="General">📄 General</option>
+                </select>
+                <button class="btn btn-primary fw-bold px-4" onclick="resetFilters()">🔄 Reset</button>
+            </div>
+        </div>
+
+
+        <!-- Sections (Hidden by Default) -->
+
+<div class="container-fluid mt-4">
+
+    <!-- Home Section -->
+    <div id="home" class="community-section p-4 bg-light rounded shadow-lg">
+        <h2 class="text-center text-success mb-4">🏠 Welcome to the Community</h2>
+        <div id="home-data" class="container-fluid d-flex flex-column overflow-auto bg-white rounded p-3"
+            style="height: 200vh; width: 95vw; border: 2px solid #28a745; box-shadow: 0px 4px 10px rgba(0,0,0,0.2);">
+            <!-- Grid Rows for Cards -->
+            <div class="home-grid row g-4 justify-content-center">
+                <!-- Cards will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Diseased Crops Section -->
+    <div id="diseased-crop" class="community-section d-none p-4 bg-light rounded shadow-lg">
+        <h2 class="text-center text-dark mb-4">🌱 Diseased Crops in Your Location</h2>
+        <div id="diseased-crop-data" class="container-fluid overflow-auto bg-white rounded p-3"
+            style="height: 200vh; width: 95vw; box-shadow: 0px 4px 10px rgba(0,0,0,0.2);">
+            <div class="diseased-grid row g-4 justify-content-center">
+                <!-- Cards will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Solutions Section -->
+    <div id="solutions" class="community-section d-none p-4 bg-light border border-primary rounded shadow-lg">
+        <h2 class="text-center text-primary mb-4">💡 Smart Solutions</h2>
+        <div id="solution-data" class="container-fluid overflow-auto bg-white rounded p-3"
+            style="height: 200vh; width: 95vw; border: 2px solid #007bff; box-shadow: 0px 4px 10px rgba(0,0,0,0.2);">
+            <div class="solution-grid row g-4 justify-content-center">
+                <!-- Cards will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+</div>
+
+        <div id="expert-talk" class="community-section d-none">
+            <h2 class="text-center">🎤 Expert Talks</h2>
+        </div>
+
+
+        <!-- <div id="help" class="community-section d-none">
+        <button onclick="window.open('http://localhost:3000/Contact/us', '_blank')">
+            <h2 class="text-center">Help and Support</h2>
+            </button>
+        </div> -->
+
+        <div id="help" class="container mt-5 mb-5 py-4">
+            <div class="card shadow-lg rounded p-4 text-center">
+                <h2 class="fw-bold text-success">❓ Help & Support</h2>
+                <p class="text-muted">If you need assistance, feel free to reach out. Our dedicated support team is available to
+                    help with any concerns, technical issues, or questions regarding the Smart Agriculture System. Whether you
+                    need guidance on using our platform, troubleshooting help, or general inquiries, we're here for you. Don't
+                    hesitate to contact us and get the assistance you need to improve your farming experience.If you need assistance, feel free to reach out. Our dedicated support team is available to
+                    help with any concerns, technical issues, or questions regarding the Smart Agriculture System. Whether you
+                    need guidance on using our platform, troubleshooting help, or general inquiries, we're here for you. Don't
+                    hesitate to contact us and get the assistance you need to improve your farming experience.</p>
+                <button class="btn btn-primary fw-bold" onclick="window.open('http://localhost:3000/Contact/us', '_blank')">📞
+                    Get Help</button>
+            </div>
+        </div>
+
+        <!-- Upload Section -->
+         <div>
+        <div id="upload" class="community-section d-none">
+            <h2 class="text-center">📤 Post On Community</h2>
+            <div class="px-4 mx-4">
+            <form id="uploadForm" enctype="multipart/form-data" class="p-4 bg-light rounded shadow mt-4">
+                <div class="mb-3">
+                    <label class="form-label">📍 Complete Location</label>
+                    <input type="text" class="form-control" name="location" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">🌾 Crop Name</label>
+                    <input type="text" class="form-control" name="crop" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">⚠ Disease Name</label>
+                    <input type="text" class="form-control" name="disease">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">📝 Is Diseased?</label>
+                    <select class="form-control" name="isDiseased">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">👤 Name of Farmer or Expert</label>
+                    <input type="text" class="form-control" name="person">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">📂 Categorization</label>
+                    <select class="form-control" name="category">
+                        <option value="Solution">Solution</option>
+                        <option value="General">General</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">📸 Upload Images</label>
+                    <input type="file" class="form-control" name="images" multiple required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">💬 Suggestions or Additional Notes</label>
+                    <textarea class="form-control" name="suggestion" rows="3"
+                        placeholder="Type anything you want to share..."></textarea>
+                </div>
+                <div><span class="text-danger">*You can Upload a maximum of 5 images with a Maximum size of 10MB!</span></div>
+                <button type="submit" class="btn btn-success fw-bold">📤 Submit</button>
+            </form>
+            </div>
+        </div>
+        </div>
+    </div>
+
+        <%- include("cropMonitor"); %>
+            <%- include("footer"); %>
+</div>
+                <!-- Scripts -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                <script src="/js/script.js"></script>
+                <script src="/js/crop2.js"></script>
+                <script src="/js/crop.js"></script>
+</body>
+
+</html>

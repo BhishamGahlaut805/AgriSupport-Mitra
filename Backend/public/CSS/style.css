@@ -1,0 +1,1083 @@
+.bg-container {
+    height: 100vh;
+    /* Set desired height */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bg-image-2 {
+    /* Screenshot to be added */
+    background-image: url('/images\image_icon.png');
+    /* Replace with your image URL */
+}
+
+.img1 {
+    background: none;
+    mix-blend-mode: multiply;
+    width: 100px;
+    height: 80px;
+    transform: scale(1);
+    transform-origin: center;
+}
+
+/* Style for the parent container */
+.bg-container {
+    /* Subtle border for a clean look */
+    border-radius: 15px;
+    /* Rounded corners */
+    padding: 20px;
+    /* Adds spacing inside */
+}
+
+/* Style for main text */
+.Text1 {
+    font-size: 1.5rem;
+    /* Large text size */
+    color: black;
+    /* Neutral dark grey for readability */
+    font-weight: 600;
+    /* Bold for emphasis */
+    margin-bottom: 15px;
+    text-transform: capitalize;
+    line-height: 1.8;
+    font-size: 40px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Style for highlighted text */
+.sub_text {
+    font-size: 1.8rem;
+    /* Slightly larger for emphasis */
+    color: blueviolet;
+    /* Bootstrap primary blue color */
+    font-weight: 700;
+    /* Extra bold */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .Text1 {
+        font-size: 1.2rem;
+        /* Slightly smaller text for smaller screens */
+    }
+
+    .sub_text {
+        font-size: 1.5rem;
+        /* Adjust sub text size */
+    }
+}
+
+.btns {
+    width: max-content;
+    line-height: 40px;
+    height: max-content;
+    background-color: rgb(150, 66, 228);
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+
+
+.btns {
+    background-color: #007bff;
+    color: #fff;
+    border: 1px solid #007bff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+.navbar-brand {
+    color: blueviolet;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+#sidebarToggle {
+    background-color: rgb(164, 86, 236);
+    color: black;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+#sidebarToggle:hover {
+    background-color: #d6d8db;
+}
+
+.dropdown-menu {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.dropdown-item {
+    color: #343a40;
+}
+
+.dropdown-item:hover {
+    background: #e9ecef;
+    color: #007bff;
+}
+
+.collapse {
+    transition: height 0.4s ease, opacity 0.4s ease;
+}
+
+.navbar-toggler {
+    border: none;
+    transition: transform 0.3s;
+}
+
+.navbar-toggler:hover {
+    transform: rotate(90deg);
+}
+
+#themeToggle {
+    background-color: transparent;
+    color: #6c757d;
+    transition: transform 0.3s, color 0.3s;
+}
+
+#themeToggle:hover {
+    color: #b3b000;
+    transform: rotate(20deg);
+}
+
+.btns {
+    margin: 0 5px;
+    color: #fff;
+    background-color: blueviolet;
+    /* border: 1px solid #007bff; */
+}
+
+.btns:hover {
+    background-color: rgb(80, 9, 146);
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.4rem;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+    }
+
+    #sidebarToggle {
+        margin: 0 auto;
+    }
+
+    .btns {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* General Typography */
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #333;
+    /* Neutral text color */
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    /* Light background for contrast */
+}
+
+/* Background Container */
+.bg-container {
+    border-radius: 16px;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Text Styles */
+.Text1 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: black;
+}
+
+.sub_text {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #1dc4e9;
+    /* Aqua accent */
+    text-transform: uppercase;
+}
+
+/* Buttons */
+.btn1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 20px;
+    /* Fully rounded */
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    /* Depth for buttons */
+}
+
+/* Primary Button */
+.btn-primary {
+    background: #7b61ff;
+    /* Violet */
+    color: white;
+    border: 2px solid #7b61ff;
+}
+
+/* Footer Text Style */
+.margintop-10 p {
+    font-size: 1.5rem;
+    color: #f4f4f4;
+    font-weight: 400;
+}
+
+/* Hover Animations */
+.btn1:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    /* Elevated shadow */
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .bg-container {
+        padding: 20px;
+    }
+
+    .Text1 {
+        font-size: 1.4rem;
+    }
+
+    .sub_text {
+        font-size: 1.8rem;
+    }
+
+    .sub_text1 {
+        font-size: 1.8rem;
+    }
+
+    .btn1 {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
+
+.footer-custom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: #000000bd;
+    /* Black background */
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer-custom a {
+    color: #ffc107;
+    /* Yellow for links */
+    transition: color 0.3s;
+}
+
+.footer-custom a:hover {
+    color: #f1c40f;
+    /* Slightly lighter yellow on hover */
+}
+
+.footer-custom .social-icons i {
+    font-size: 1.5em;
+    margin-right: 10px;
+    transition: color 0.3s;
+}
+
+.footer-custom .social-icons i:hover {
+    color: #ffc107;
+}
+
+.nav_main {
+    margin-bottom: 20px;
+}
+
+.navbar-brand {
+    font-size: calc(1.5rem + 1vw);
+    /* Scales with screen size */
+}
+
+.btns {
+    padding: 0.5rem 1rem;
+    font-size: calc(0.8rem + 0.2vw);
+    /* Adjust button font size */
+}
+
+/* Responsive Search Bar */
+form.d-flex input[type="search"] {
+    min-width: 200px;
+    max-width: 300px;
+}
+
+/* Adjust navigation menu spacing */
+.navbar-nav li {
+    padding: 0.5rem 0.75rem;
+}
+
+/* Responsive navbar */
+@media (max-width: 768px) {
+    .nav_main .navbar-nav .nav-item {
+        padding: 0.3rem 0.5rem;
+        /* Reduce spacing on smaller screens */
+    }
+
+    .navbar-brand {
+        font-size: 1.5rem;
+        /* Fix font size for smaller screens */
+    }
+
+    form.d-flex input[type="search"] {
+        width: 100%;
+        /* Full width search bar on smaller screens */
+        max-width: unset;
+    }
+}
+
+/* Extra small screen adjustments */
+@media (max-width: 576px) {
+    .btns {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .navbar-brand {
+        margin-bottom: 10px;
+    }
+
+    .nav_main button#sidebarToggle {
+        margin: 0;
+        /* Hide sidebar toggle on extra small screens */
+    }
+}
+
+/* Sidebar Styles */
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -100;
+    /* Initially hidden */
+    width: 80%;
+    /* 80% of screen width for typical mobile (Android) devices */
+    max-width: 400px;
+    /* Maximum width for larger screens (similar to Android phone width) */
+    height: 100%;
+    background-color: #f8f9fa;
+    /* Light theme background */
+    color: #333;
+    /* Dark text color */
+    transition: left 0.3s ease-in-out;
+    /* Faster appearance */
+    padding-top: 60px;
+    z-index: 1000;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    border-right: 2px solid #ddd;
+    /* Light border for separation */
+}
+
+/* Sidebar Links */
+.sidebar a {
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #333;
+    /* Dark text */
+    display: block;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.sidebar a:hover {
+    background-color: #e2e6ea;
+    /* Light hover effect */
+    color: #007bff;
+    /* Color change on hover */
+}
+
+/* Close Button inside Sidebar */
+.sidebar .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Open Button (Hamburger Icon) */
+.open-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Content Adjustment when Sidebar is Opened */
+.content {
+    transition: margin-left 0.3s ease-in-out;
+    /* Smooth transition */
+    padding: 20px;
+    margin-left: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin-top: 50px;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.btn-submit {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+/* //login and Registration */
+.form-container {
+    width: 100%;
+    max-width: 450px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+
+    padding: 40px;
+    box-sizing: border-box;
+
+
+        background-color: rgba(255, 255, 255, 0.8);
+        /* Semi-transparent white background to let the image show through */
+        border-radius: 10px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        padding: 30px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        margin-left: auto;
+        margin-right: auto;
+        /* background-image: url("/images/tree.png"); */
+        background-size: cover;
+        background-position: center;
+        backdrop-filter: blur(5px);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.btn-custom {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-custom:hover {
+    background-color: #0056b3;
+}
+
+.form-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #007bff;
+}
+
+.switch-btns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.switch-btns a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.switch-btns a:hover {
+    color: #0056b3;
+}
+
+.forgot-password {
+    color: #007bff;
+    font-size: 14px;
+    text-decoration: none;
+    float: right;
+}
+
+.forgot-password:hover {
+    color: #0056b3;
+}
+
+/* Input fields and labels */
+.form-control {
+    border-radius: 5px;
+    box-shadow: none;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.login_form {
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.btn2 {
+    height: fit-content;
+
+}
+
+/* Modified */
+.navbar-nav .nav-link:hover {
+    background-color:orange;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover,
+.user-icon:hover {
+    transform: scale(1.1);
+}
+
+.btn-cool,
+.user-icon-cool {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-cool {
+    border-bottom: 2px solid #00838f;
+}
+.logo1 {
+    font-size: 40px;
+    /* Set the font size */
+    font-weight: bold;
+    /* Make the text bold */
+    background: linear-gradient(45deg, #8E44AD, #2980B9, #16A085);
+    /* Linear gradient with dark cool colors */
+    background-clip: text;
+    background-clip: text;
+    -webkit-background-clip: text;
+    /* Make the background clip the text */
+    color: transparent;
+    /* Make the text color transparent */
+    transition: all 0.3s ease-in-out;
+    /* Smooth transition for hover effect */
+}
+
+.logo1:hover {
+    background: linear-gradient(45deg, #8E44AD, #2980B9, #16A085);
+    /* Gradient color change on hover */
+    background-clip: text;
+    -webkit-background-clip: text;
+    /* Make the background clip the text on hover */
+    color: transparent;
+    /* Keep the text transparent */
+}
+/*
+/* Form Container */
+/* Form Container */
+.custom-login-form {
+    width: 100%;
+    max-width: 450px;
+    background-color: #F5F5DC;
+    /* Beige background color */
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(34, 139, 34, 0.5);
+    /* Greenish shadow */
+    padding: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* background-image: url("/images/tree.png"); */
+    /* Agriculture-themed background image */
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(5px);
+    /* Blur effect */
+}
+
+/* Form Title */
+.custom-form-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.custom-form-title h3 {
+    font-size: 28px;
+    color: #2E8B57;
+    /* Sea green color */
+    margin-bottom: 10px;
+}
+
+.custom-form-title h4 {
+    color: #8B4513;
+    /* Saddle brown color */
+    margin-top: 10px;
+}
+
+/* Tab Content */
+.custom-tab-content {
+    display: none;
+}
+
+.custom-tab-content.active {
+    display: block;
+}
+
+/* Input Fields */
+.custom-form-label {
+    font-size: 14px;
+    color: #6B8E23;
+    /* Olive drab color */
+    margin-bottom: 8px;
+    display: block;
+}
+
+.custom-form-control {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border: 1px solid #556B2F;
+    /* Dark olive green color */
+    border-radius: 8px;
+    font-size: 16px;
+    color: #2F4F4F;
+    /* Dark slate grey color */
+    background-color: #F0E68C;
+    /* Khaki background color */
+}
+
+.custom-form-control:focus {
+    border-color: #3CB371;
+    /* Medium sea green color */
+    outline: none;
+}
+
+.custom-form-control::placeholder {
+    color: #8B4513;
+    /* Saddle brown color */
+}
+
+/* Links */
+.custom-forgot-password {
+    display: block;
+    text-align: right;
+    color: #3CB371;
+    /* Medium sea green color */
+    font-size: 14px;
+    text-decoration: none;
+    margin-top: 8px;
+}
+
+.custom-forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Buttons */
+.custom-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #6B8E23;
+    /* Olive drab color */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-btn:hover {
+    background-color: #556B2F;
+    /* Dark olive green color */
+    box-shadow: 0 5px 15px rgba(34, 139, 34, 0.2);
+    /* Greenish shadow on hover */
+}
+
+/* Switch Links */
+.custom-switch-btns {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.custom-switch-btns a {
+    color: #3CB371;
+    /* Medium sea green color */
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.custom-switch-btns a:hover {
+    text-decoration: underline;
+}
+
+/* Margins */
+.mb-3 {
+    margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .custom-login-form {
+        width: 90%;
+    }
+}
+
+
+/* Form Container */
+.custom-login-form {
+    width: 100%;
+    max-width: 450px;
+    background-color: #F5F5DC;
+    /* Beige background color */
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(34, 139, 34, 0.5);
+    /* Greenish shadow */
+    padding: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* background-image: url("/images/field.jpg");
+    Agriculture-themed background image */
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(5px);
+    /* Blur effect */
+}
+
+/* Form Title */
+.custom-form-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.custom-form-title h3 {
+    font-size: 28px;
+    color: #2E8B57;
+    /* Sea green color */
+    margin-bottom: 10px;
+}
+
+.custom-form-title h4 {
+    color: #8B4513;
+    /* Saddle brown color */
+    margin-top: 10px;
+}
+
+/* Input Fields */
+.custom-form-label {
+    font-size: 14px;
+    color: #6B8E23;
+    /* Olive drab color */
+    margin-bottom: 8px;
+    display: block;
+}
+
+.custom-form-control {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border: 1px solid #556B2F;
+    /* Dark olive green color */
+    border-radius: 8px;
+    font-size: 16px;
+    color: #2F4F4F;
+    /* Dark slate grey color */
+    background-color: #F0E68C;
+    /* Khaki background color */
+}
+
+.custom-form-control:focus {
+    border-color: #3CB371;
+    /* Medium sea green color */
+    outline: none;
+}
+
+.custom-form-control::placeholder {
+    color: #8B4513;
+    /* Saddle brown color */
+}
+
+/* Links */
+.custom-forgot-password {
+    display: block;
+    text-align: right;
+    color: #3CB371;
+    /* Medium sea green color */
+    font-size: 14px;
+    text-decoration: none;
+    margin-top: 8px;
+}
+
+.custom-forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Buttons */
+.custom-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #6B8E23;
+    /* Olive drab color */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-btn:hover {
+    background-color: #556B2F;
+    /* Dark olive green color */
+    box-shadow: 0 5px 15px rgba(34, 139, 34, 0.2);
+    /* Greenish shadow on hover */
+}
+
+/* Switch Links */
+.custom-switch-btns {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.custom-switch-btns a {
+    color: #3CB371;
+    /* Medium sea green color */
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.custom-switch-btns a:hover {
+    text-decoration: underline;
+}
+
+/* Margins */
+.mb-3 {
+    margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .custom-login-form {
+        width: 90%;
+    }
+}
+
+.maincont100{
+    background: linear-gradient(to right, #add8e6, #47acea);
+}
+.somebox{
+    background-color: #d8f5ff;
+}
+.maincont100 {
+    background: linear-gradient(to right, #cde8d8, #78c7a3);
+    /* Soft green gradient for a fresh agriculture feel */
+}
+
+.somebox {
+    background-color: #e9f7ef;
+    /* Light pastel green for a soft contrast */
+    border: 2px solid #78c7a3;
+    /* Subtle border for better definition */
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    /* Soft shadow for a professional touch */
+    padding: 15px;
+}
+
+
+#google_translate_icon {
+    width: 60px;
+    height: 60px;
+    /* background-color: #4CAF50; */
+    /* Green */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+/* Hover Effect */
+#google_translate_icon:hover {
+    /* background-color: #388E3C; */
+    /* Darker Green */
+    transform: scale(1.5);
+}
+
+/* Translate Icon */
+#google_translate_icon img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+.logoicon{
+background-image:url("/images/farmer.gif");
+background-size:cover;
+border-color: hsl(11, 100%, 60%);
+border-radius: 50%;
+animation: animationBorder 2s ease-in-out 0s infinite ;
+}
+@keyframes animationBorder {
+    0%{
+        .logoicon{
+            border-color:hsl(11, 82%, 71%);
+        }
+    }
+    50%{
+        .logoicon {
+                border-color: hsl(11, 71%, 43%);
+            }
+    }
+    100%{
+        .logoicon{
+            border-color: hsl(11, 98%, 25%);
+        }
+    }
+}
+.bgLogout{
+    width:50px;
+    height:50px;
+    background-image: url("/images/logout.gif");
+    background-size: cover;
+    background-color: #FF5733;
+    /* border-radius:30%; */
+    border-color: #007bff;
+    /* border-width: 5px; */
+    scale:1.4;
+}
+.contactbg{
+    background-color: #93bce9;
+}
+
+.container-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 40vw;
+    margin:20px;
+}
+
+.container-1 {
+    background-color: #ffffff;
+}
+
+.container-2 {
+    background-color: #ffffff;
+}
+
+                .container-wrapper {
+                    display: flex;
+                    justify-content: center;
+                    gap: 30px;
+                    flex-wrap: wrap;
+                    margin-top: 50px;
+                }
+
+                .button-container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 15px;
+                    padding: 20px;
+                    border-radius: 12px;
+                    background-color: white;
+                    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+                    min-width: 320px;
+                }
+
+                .card-btn {
+                    width: 100%;
+                    padding: 12px;
+                    border-radius: 8px;
+                    font-size: 1rem;
+                    font-weight: bold;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: 0.3s;
+                    border: none;
+                }
+
+                .card-btn:hover {
+                    transform: translateY(-3px);
+                    opacity: 0.9;
+                }
+
+                .card {
+                    width: 100%;
+                    padding: 10px;
+                    border-radius: 12px;
+                    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
+                    transition: 0.3s;
+                }
+
+                .card:hover {
+                    transform: scale(1.05);
+                    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.18);
+                }
+
+                .container-1 {
+                    background-color: #e3f2fd;
+                }
+
+                .container-2 {
+                    background-color: #fff3e0;
+                }
+
+                h4 {
+                    text-align: center;
+                    font-weight: bold;
+                    color: #333;
+                    margin-bottom: 15px;
+                }
+
+                .conatiner5{
+                    background-color: #2a826f;
+                }
+

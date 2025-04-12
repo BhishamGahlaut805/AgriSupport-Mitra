@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contactUS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/utility.css">
+</head>
+
+<body>
+    <%-include('navbar'); %>
+<div class="mt-4 responsive-div p-4 contactbg text-white main_text text-center shadow-sm rounded">
+    <p class="Text1 mb-2">👋 Hello Farmers!</p>
+    <strong class="sub_text text-success">🚜 Welcome to the Smart Agriculture System</strong>
+    <p class="Text1 mt-3">📩 Submit your query and get the support you need!</p>
+</div>
+
+<!-- Main Content -->
+<div class="container-fluid my-5 main-content d-flex flex-column flex-md-row">
+    <!-- Sidebar - Active Queries -->
+
+    <div class="container mt-5 border-dark h-100">
+        <h2 class="text-center fw-bold text-warning">⏳ Active Queries</h2>
+        <div id="active-queries" class="list-group bg-light p-3 rounded shadow-sm"
+            style="max-height: 700px; overflow-y: auto;">
+            <p class="text-muted text-center">No active queries yet...</p>
+        </div>
+    </div>
+
+
+    <!-- Dashboard Section - Query Form and Active Queries -->
+    <div class="col-md-8">
+        <div class="container mt-4">
+            <h2 class="text-center mb-4">📝 Farmer Support Form</h2>
+            <form id="query-form" class="p-4 shadow-lg rounded bg-white border border-success">
+                <!-- Name Input -->
+                <div class="mb-3">
+                    <label for="name" class="form-label">👤 Full Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required
+                        placeholder="Enter your full name">
+                </div>
+
+                <!-- Place of Residence Input -->
+                <div class="mb-3">
+                    <label for="residence" class="form-label">🏡 Place of Residence</label>
+                    <input type="text" class="form-control" id="residence" name="residence" required
+                        placeholder="Enter your place of residence">
+                </div>
+
+                <!-- Query Text Area -->
+                <div class="mb-3">
+                    <label for="query" class="form-label">💬 Describe Your Issue</label>
+                    <textarea class="form-control" id="query" name="query" rows="4" placeholder="Write your query here"
+                        required></textarea>
+                </div>
+
+                <!-- Image Upload -->
+                <div class="mb-3">
+                    <label for="image" class="form-label">📸 Upload Image (Optional)</label>
+                    <input type="file" class="form-control" id="image" name="image" accept="image/*">
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-success w-100 py-2 fw-bold">📨 Submit</button>
+            </form>
+        </div>
+
+
+    </div>
+</div>
+
+<div class="col bg-light p-4 shadow-sm rounded mt-4 w-100" style="max-height: 140vh; overflow-y: auto;">
+    <h4 class="text-center fw-bold text-success">✅ Resolved Queries</h4>
+    <div id="resolved-queries" class="list-group">
+        <p class="text-muted text-center">No resolved queries yet...</p>
+    </div>
+</div>
+
+        <%- include('footer') %>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+            <script src="/js/script.js"></script>
+            <script src="/js/contact.js"></script>
+            <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+
+</html>

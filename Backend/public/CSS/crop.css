@@ -1,0 +1,701 @@
+  .card {
+      border-radius: 10px;
+      /* Rounded corners for cards */
+      overflow: hidden;
+      /* Prevent image overflow */
+      transition: transform 0.3s ease-in-out;
+      /* Smooth transition for hover effect */
+  }
+
+  .card:hover {
+      transform: scale(1.05);
+      /* Slightly zoom in on hover */
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      /* Shadow effect on hover */
+  }
+
+  .card-img-top {
+      border-bottom: 3px solid #ddd;
+      /* Subtle line separating image from body */
+  }
+
+  .card-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+  }
+
+  .card-body {
+      padding: 20px;
+  }
+
+  .btn-primary {
+      background-color: #0056b3;
+      /* Change button color */
+      border: none;
+  }
+
+  .btn-primary:hover {
+      background-color: #003f8f;
+      /* Darker blue on hover */
+  }
+
+  /* Custom font and spacing
+  body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      padding-top: 50px;
+  } */
+
+  .container {
+      padding-top: 30px;
+  }
+
+  .text-muted {
+      font-size: 0.9rem;
+  }
+
+
+  /* Hero Section */
+  .hero-section {
+      padding: 100px 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      /* Overlay for better text visibility */
+  }
+
+  .hero-section h1 {
+      font-size: 3.5rem;
+  }
+
+  .hero-section p {
+      font-size: 1.5rem;
+  }
+
+  /* Card Styling */
+  .card {
+      transition: transform 0.3s ease;
+  }
+
+  .card:hover {
+      transform: translateY(-10px);
+  }
+
+  /* Button Styling */
+  .btn-success {
+      background-color: #28a745;
+      border-color: #28a745;
+  }
+
+  .btn-success:hover {
+      background-color: #218838;
+      border-color: #1e7e34;
+  }
+
+  /* About Section */
+  .about-section {
+      background-color: #f8f9fa;
+  }
+.img11{
+    opacity: 0.9;
+}
+  /* Improved Drag & Drop Styling */
+  #drop-area {
+      border: 3px dashed #28a745;
+      border-radius: 10px;
+      padding: 30px;
+      background: rgba(40, 167, 69, 0.1);
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+  }
+
+  #drop-area:hover {
+      background: rgba(40, 167, 69, 0.2);
+  }
+
+  #drop-area img {
+      width: 100px;
+      height: auto;
+      opacity: 0.8;
+  }
+
+  #drop-area p {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #444;
+  }
+
+  .crop-selector img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 2px solid #28a745;
+      padding: 5px;
+      transition: transform 0.3s ease;
+  }
+
+  .crop-selector img:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+  }
+.bgImg{
+        width: 300px;
+        height: 300px;
+        opacity:0.5;
+        background: url('/images/dragndrop.png');
+        background-repeat: none;
+        background-position: center;
+        background-size:cover;
+        border-radius:10px;
+}
+.d-flex {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Crop Selector Hover Effect */
+.crop-selector:hover {
+    transform: scale(1.05);
+    border: 2px solid green !important;
+    background: rgba(40, 167, 69, 0.1);
+}
+
+/* Drag Area Effects */
+#drop-area:hover {
+    background-color: rgba(40, 167, 69, 0.2);
+}
+
+  @keyframes fadeIn {
+      from {
+          opacity: 0;
+          transform: translateY(20px);
+      }
+
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+
+  /* Status Badge Styling */
+  .badge-healthy {
+      background-color: #28a745;
+      color: white;
+  }
+
+  .badge-diseased {
+      background-color: #dc3545;
+      color: white;
+  }
+
+   /* .sidebar {
+       min-height: 75vh;
+       margin-left: 15px;
+       border-radius: 10px;
+       background: #f8f9fa;
+       box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
+   } */
+
+   .sidebar h4 {
+       background: #fff;
+       padding: 10px;
+       border-radius: 8px;
+       box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+   }
+
+   .sidebar ul {
+       max-height: 55vh;
+       overflow-y: auto;
+       background: white;
+       padding: 10px;
+       border-radius: 8px;
+       border: 1px solid #ddd;
+       box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.05);
+   }
+
+   /* Crop Selector Hover */
+   .crop-selector:hover {
+       border: 2px solid green !important;
+       background: #e9ffe9 !important;
+   }
+
+   /* Upload Box Styling */
+   #drop-area {
+       background-color: rgba(40, 167, 69, 0.1);
+       min-height: 400px;
+       transition: 0.3s ease-in-out;
+       border: 2px dashed #28a745;
+   }
+
+   #drop-area:hover {
+       background: rgba(40, 167, 69, 0.2);
+   }
+
+   /* Result Card */
+   .result-card {
+       max-width: 600px;
+       border-radius: 15px;
+       animation: fadeIn 0.5s ease-in-out;
+   }
+
+   /* Animation */
+   @keyframes fadeIn {
+       from {
+           opacity: 0;
+           transform: translateY(10px);
+       }
+
+       to {
+           opacity: 1;
+           transform: translateY(0);
+       }
+   }
+
+
+   /* Ensure the sidebar height matches the main content */
+   .main-content {
+       display: flex;
+       align-items: stretch;
+       /* Stretch sidebar and main content to same height */
+   }
+
+   /* Adjust the main content area */
+   .content-area {
+       flex-grow: 1;
+       /* Allow main content to take remaining space */
+       padding: 20px;
+   }
+
+   /* Style for the search history list */
+   #search-history {
+       max-height: 400px;
+       /* Limit height for scroll */
+       overflow-y: auto;
+       /* Enable scrolling */
+   }
+/* Main container to ensure 3-column layout */
+/* ✅ Parent Container */
+#home-data,
+#diseased-crop-data,
+#solution-data {
+    height: 200vh;
+    /* Full height */
+    width: 100vw;
+    /* Full width */
+    overflow-y: auto;
+    /* Enables scrolling inside the container */
+    padding: 20px;
+    background: #f8f9fa;
+    /* Light gray background */
+    display: flex;
+    flex-direction: column;
+}
+
+/* ✅ Grid Structure for Cards */
+.home-grid,
+.diseased-grid,
+.solution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Creates a responsive grid */
+    gap: 20px;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* ✅ Individual Card */
+.community-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 350px;
+    /* Limits max width of cards */
+}
+
+.community-card:hover {
+    transform: scale(1.03);
+}
+
+/* ✅ Badge Styling */
+.card-badge {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* ✅ Image Styling */
+.card-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.card-images img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ Scroll Behavior */
+#home-data::-webkit-scrollbar,
+#diseased-crop-data::-webkit-scrollbar,
+#solution-data::-webkit-scrollbar {
+    width: 8px;
+}
+
+#home-data::-webkit-scrollbar-thumb,
+#diseased-crop-data::-webkit-scrollbar-thumb,
+#solution-data::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+#home-data::-webkit-scrollbar-thumb:hover,
+#diseased-crop-data::-webkit-scrollbar-thumb:hover,
+#solution-data::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* 🌿 General Styling */
+/* 🌿 General Styling */
+
+/* 📋 Report Container */
+#report-container {
+    max-width: 80vw;
+    margin: 30px auto;
+    padding: 25px;
+    /* background-color: #1b3a4b; */
+    /* Dark Blue */
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 🟢 Report Card */
+.report-card {
+    text-align: center;
+    padding: 25px;
+    background: linear-gradient(to right, #cde8d8, #78c7a3);
+    /* Dark Green */
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.report-header {
+    color: white;
+    padding: 15px;
+    font-size: 22px;
+    border-radius: 10px;
+    text-transform: uppercase;
+}
+
+/* ✅ Healthy Report Theme */
+
+
+/* 📷 Report Image */
+.report-image img {
+    max-width: 85%;
+    border-radius: 12px;
+    border: 3px solid #64dd17;
+    /* Light Green */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+/* ℹ️ Report Info */
+.report-info {
+    margin-top: 20px;
+    font-size: 17px;
+    text-align: center;
+}
+
+.report-info p {
+    margin: 10px 0;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #263238;
+}
+
+/* 📌 Report Sections */
+.report-section {
+    background-color: #263238;
+    /* Dark Blue-Green */
+    padding: 18px;
+    border-radius: 12px;
+    margin-top: 25px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+.report-section h3 {
+    color: #64ffda;
+    /* Teal Accent */
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.report-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.report-section li {
+    padding: 10px;
+    border-bottom: 1px solid #4caf50;
+    color: #eeeeee;
+}
+
+.report-section li:last-child {
+    border-bottom: none;
+}
+
+/* 🎙️ Text-to-Speech Controls */
+.tts-container {
+    text-align: center;
+    margin-top: 30px;
+    background-color: #263238;
+    /* Dark Green */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    color:white;
+}
+
+/* 🔘 Radio Button Styling */
+.radio-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.radio-option {
+    font-size: 18px;
+    padding: 10px;
+    background: #004d40;
+    /* Teal */
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+.radio-option input {
+    margin-right: 8px;
+}
+
+/* 🎵 Listen Button */
+.btn-large {
+    background-color: #4caf50;
+    /* Green */
+    color: white;
+    font-size: 20px;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+    justify-content: center;
+    width: 270px;
+    margin: 15px auto;
+}
+
+.btn-large:hover {
+    background-color: #388e3c;
+    transform: scale(1.05);
+}
+
+/* 🔵 Hindi Translate Button */
+.btn-hindi {
+    background-color: #0d47a1;
+    /* Dark Blue */
+}
+
+.btn-hindi:hover {
+    background-color: #1565c0;
+}
+
+/* 🎤 Mic Animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+.audio-controls{
+    display: flex;
+    justify-content: space-around;
+    gap:10px;
+}
+.play-icon {
+    background-image: url("/images/play.gif");
+    background-size: cover;
+    width: 20px;
+    /* Adjust the size of the GIF */
+    height: 20px;
+    vertical-align: middle;
+    /* Align the GIF with the text */
+    margin-right: 5px;
+    scale:2;
+    /* Add some spacing between the GIF and text */
+}
+.pause-icon {
+    background-image: url("/images/podcast.gif");
+    background-size: cover;
+    width: 20px;
+    /* Adjust the size of the GIF */
+    height: 20px;
+    vertical-align: middle;
+    /* Align the GIF with the text */
+    margin-right: 5px;
+    scale: 2;
+    /* Add some spacing between the GIF and text */
+}
+.vol-icon{
+    background-image: url("/images/volume.gif");
+        background-size: cover;
+        width: 20px;
+        /* Adjust the size of the GIF */
+        height: 20px;
+        vertical-align: middle;
+        /* Align the GIF with the text */
+        margin-right: 5px;
+        scale: 2;
+}
+.icon-cont{
+    display: flex;
+    background-color: white;
+    gap:6px;
+}
+.icon-text{
+    display: flex;
+    color:black;
+    font-size:15px;
+
+}
+.google_translate_element{
+    display: flex;
+    position: absolute;
+    margin: auto;
+    scale:2;
+
+}
+.tts-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* Ensure vertical alignment */
+}
+
+.tts1,
+.tts2 {
+    display: flex;
+    justify-content: center;
+}
+
+.tts1 {
+    flex-direction: column;
+}
+
+.tts2 {
+    width: 500px;
+    /* Adjust as needed */
+    height: 500px;
+    /* Adjust as needed */
+    background-image: url("/images/newicon.svg");
+    background-size: cover;
+    background-position: center;
+    scale: 1.3;
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.tts2{
+    animation: scaleUp 2s infinite ease-in-out;
+}
+
+                /* Styling the image container */
+                #image-container_webScrap {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 10px;
+                    justify-content: center;
+                    padding: 20px;
+                }
+
+                /* Styling the images */
+                .image-box {
+                    position: relative;
+                    cursor: pointer;
+                    transition: transform 0.2s ease-in-out;
+                }
+
+                .image-box:hover {
+                    transform: scale(1.05);
+                }
+
+                .image-box img {
+                    width: 150px;
+                    height: auto;
+                    border-radius: 10px;
+                    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+                }
+
+                /* Lightbox Modal */
+                #lightbox {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.8);
+                    display: none;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                #lightbox img {
+                    max-width: 90%;
+                    max-height: 90%;
+                    border-radius: 10px;
+                }
+
+                #lightbox-close {
+                    position: absolute;
+                    top: 10px;
+                    right: 20px;
+                    font-size: 30px;
+                    color: white;
+                    cursor: pointer;
+                }

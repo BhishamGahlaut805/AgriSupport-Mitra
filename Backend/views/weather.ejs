@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html translate="no" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Analysis</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/utility.css">
+    <link rel="stylesheet" href="/CSS/weather.css">
+    <link rel="stylesheet" href="/CSS/crop.css">
+</head>
+
+<body>
+    <%- include("navbar"); %>
+<!--
+        <div class="container-fluid container_main mt-5 mb-5 px-4 d-flex flex-row">
+            <div class="responsive-div p-4 text-center flex-fill">
+                <h1 class="display-4 sub_text">Welcome to The Weather Analysis Page</h1>
+                <p class="lead">Smart Agriculture System Website</p>
+            </div>
+        </div> -->
+
+        <!-- Hero Section -->
+        <div class="container-fluid hero-section py-10 my-3 text-center img11"
+            style="background: url('/images/card1.png') no-repeat center/cover; height: 600px;">
+            <div class="container d-flex flex-column justify-content-center align-items-center h-100">
+            <h1 class="display-4 fw-bold text-white">Welcome to Weather Analysis</h1>
+            <p class="lead text-white">Empowering Farmers with Smart Agriculture Solutions</p>
+            <a href="#" class="btn btn-success btn-lg mt-3">Explore Features</a>
+            </div>
+        </div>
+
+        <div class="responsive-div p-4 text-center flex-fill">
+            <form class="formLocation d-flex justify-content-center">
+                <div class="position-relative">
+                    <input class="dataLocation form-control me-2 w-200" type="search" id="locationInput"
+                        placeholder="Search Your Location" aria-label="Search" autocomplete="off">
+                    <!-- <ul class="list-group position-absolute w-100" id="suggestions" style="z-index: 1000;"></ul> -->
+                </div>
+                <button class="btn btn-outline-success btn2 ms-1 cityMic" type="button"><i class="bi bi-mic"></i></button>
+                <button class="btn btn-outline-success btn2 ms-1" id="getLocationBtn" type="button"><i
+                        class="bi bi-geo-alt"></i></button>
+                <button class="btn btn-outline-danger btn2 ms-1 clearBtn" type="button"><i
+                        class="bi bi-x-circle"></i></button>
+                <button class="btn btn-outline-success btn2 ms-1 searchBtn1" type="submit">Search</button>
+            </form>
+            <div id="output"></div>
+        </div>
+
+        <!-- Things of Immediate Concern to show -->
+        <div class="responsive-div p-4 text-center flex-fill bg-light border rounded shadow mt-4 mx-3">
+            <div class="row flex-nowrap overflow-scroll border border-primary rounded bg-white shadow p-3">
+
+                <!-- Container 1 -->
+                <div class="col-auto mx-3 bg-info text-dark border rounded d-flex flex-column justify-content-center align-items-center shadow square-container c1"
+                    style="height: 150px; width: 150px;">
+                    <i class="bi bi-cloud-sun display-6 mb-2 c1_img"></i>
+                    <h6 class="text-center c1Info">Weather Info</h6>
+                    <p class="text-center small c1Info2">Temp, humidity, and more.</p>
+                </div>
+
+                <!-- Container 2 -->
+                <div class="col-auto mx-3 bg-success text-white border rounded d-flex flex-column justify-content-center align-items-center shadow square-container"
+                    style="height: 150px; width: 150px;">
+                <i class="bi bi-cloud-sun display-6 mb-2 c1_img"></i>
+                <h6 class="text-center c1Info">Weather Info</h6>
+                <p class="text-center small c1Info2">Temp, humidity, and more.</p>
+                </div>
+
+                <!-- Container 3 -->
+                <div class="col-auto mx-3 bg-primary text-white border rounded d-flex flex-column justify-content-center align-items-center shadow square-container"
+                    style="height: 150px; width: 150px;">
+                    <i class="bi bi-thermometer-sun display-6 mb-2"></i>
+                    <h6 class="text-center">Temperature</h6>
+                    <p class="text-center small">Daily and hourly updates.</p>
+                </div>
+
+                <!-- Container 4 -->
+                <div class="col-auto mx-3 bg-warning text-dark border rounded d-flex flex-column justify-content-center align-items-center shadow square-container"
+                    style="height: 150px; width: 150px;">
+                    <i class="bi bi-geo-alt-fill display-6 mb-2"></i>
+                    <h6 class="text-center">Location</h6>
+                    <p class="text-center small">GPS-based weather.</p>
+                </div>
+
+                <!-- Container 5 -->
+                <div class="col-auto mx-3 bg-secondary text-white border rounded d-flex flex-column justify-content-center align-items-center shadow square-container"
+                    style="height: 150px; width: 150px;">
+                    <i class="bi bi-tree-fill display-6 mb-2"></i>
+                    <h6 class="text-center">Crop Info</h6>
+                    <p class="text-center small">Recommendations for crops.</p>
+                </div>
+
+                <!-- Container 6 -->
+                <div class="col-auto mx-3 bg-success text-white border rounded d-flex flex-column justify-content-center align-items-center shadow square-container"
+                    style="height: 150px; width: 150px;">
+                    <i class="bi bi-wind display-6 mb-2"></i>
+                    <h6 class="text-center">Wind</h6>
+                    <p class="text-center small">Monitor wind patterns.</p>
+                </div>
+
+                <div class="col-auto mx-3 bg-light text-dark border rounded d-flex flex-column justify-content-center align-items-center shadow square-container"
+                    style="height: 150px; width: 150px;">
+                    <i class="bi bi-cloud-rain display-6 mb-2"></i>
+                    <h6 class="text-center">Rainfall</h6>
+                    <p class="text-center small">Rain predictions.</p>
+                </div>
+
+                <div class="col-auto mx-3 bg-dark text-white border rounded d-flex flex-column justify-content-center align-items-center shadow square-container"
+                    style="height: 150px; width: 150px;">
+                    <i class="bi bi-moon-stars display-6 mb-2"></i>
+                    <h6 class="text-center">Night</h6>
+                    <p class="text-center small">Monitor night weather.</p>
+                </div>
+
+                <div class="col-auto mx-3 bg-warning text-white border rounded d-flex flex-column justify-content-center align-items-center shadow square-container"
+                    style="height: 150px; width: 150px;">
+                    <i class="bi bi-thermometer-half display-6 mb-2"></i>
+                    <h6 class="text-center">Soil Temp</h6>
+                    <p class="text-center small">Check soil temperature.</p>
+                </div>
+
+                <div class="col-auto mx-3 bg-info text-dark border rounded d-flex flex-column justify-content-center align-items-center shadow square-container"
+                    style="height: 150px; width: 150px;">
+                    <i class="bi bi-bar-chart-fill display-6 mb-2"></i>
+                    <h6 class="text-center">Analytics</h6>
+                    <p class="text-center small">Detailed weather insights.</p>
+                </div>
+
+            </div>
+        </div>
+
+<div class="responsive-div p-4 text-center flex-fill bg-light border rounded shadow mt-4 mx-3"
+    style="height: 630px; width: auto; overflow-x: auto; overflow-y: hidden; white-space: nowrap; background: linear-gradient(135deg, #5b86e5, #36d1dc);">
+
+    <div class="row flex-nowrap border border-primary rounded bg-white shadow p-3"
+        style="min-width: 280px; border-radius: 12px;">
+
+        <!-- 🎤 Weather TTS Section -->
+        <div class="col-auto d-flex flex-column align-items-center text-dark border rounded shadow px-4 py-3 my-4"
+            style="margin-right:20px;width: 300px; height: 500px; border-radius: 15px; background: #acdcea;">
+
+            <div class="tts_1">
+                <h5 class="text-center mb-3 text-dark fw-bold">🔊 Hear Current Weather</h5>
+            </div>
+            <div class="tts1_icon"></div>
+            <button class="btn btn-warning w-100 my-2 p-2 shadow" style="border-radius: 10px;" onclick="readWeatherReport()">📢 Listen Now</button>
+            <button class="btn btn-info w-100 my-2 p-2 shadow" style="border-radius: 10px;"onclick="stopWeatherSpeech()">🌍 Pause</button>
+            <button class="btn btn-danger w-100 my-2 p-2 shadow" style="border-radius: 10px;" onclick="toggleLanguage()">Change Language</button>
+            <button class="btn btn-success w-100 my-2 p-2 shadow" style="border-radius: 10px;" onclick="changeVoice()">🔄 Change the Voice</button>
+
+        </div>
+        <div class="col-auto d-flex flex-column align-items-center text-dark border rounded shadow px-4 py-3 my-4"
+            style="margin-right:20px;width: 300px; height: 500px; border-radius: 15px; background-color: #e2eb92;color:black">
+
+            <div class="tts_1">
+                <h5 class="text-center mb-3 fw-bold text-dark">🔊5 hours from this Time</h5>
+            </div>
+            <div class="tts2_icon"></div>
+            <button class="btn btn-warning w-100 my-2 p-2 shadow" style="border-radius: 10px;" onclick="readWeatherReport1()">📢
+                Listen Now</button>
+            <button class="btn btn-info w-100 my-2 p-2 shadow" style="border-radius: 10px;" onclick="stopWeatherSpeech1()">🌍
+                Pause</button>
+            <button class="btn btn-danger w-100 my-2 p-2 shadow" style="border-radius: 10px;" onclick="toggleLanguage1()">Change
+                Language</button>
+            <button class="btn btn-success w-100 my-2 p-2 shadow" style="border-radius: 10px;" onclick="changeVoice1()">🔄 Change
+                the Voice</button>
+
+        </div>
+        <div class="col-auto d-flex flex-column align-items-center border rounded shadow px-4 py-3 my-4"
+            style="margin-right:20px; width: 300px; height: 500px; border-radius: 15px; background: #8ce07b;">
+
+            <div class="tts_1">
+                <h5 class="text-center mb-3 text-dark fw-bold">🔊12 Hours from Now</h5>
+            </div>
+            <div class="tts4_icon"></div>
+            <button class="btn btn-warning w-100 my-2 p-2 shadow" style="border-radius: 10px;" onclick="readWeatherReport3()">📢
+                Listen Now</button>
+            <button class="btn btn-info w-100 my-2 p-2 shadow" style="border-radius: 10px;" onclick="stopWeatherSpeech3()">🌍
+                Pause</button>
+            <button class="btn btn-danger w-100 my-2 p-2 shadow" style="border-radius: 10px;" onclick="toggleLanguage3()">Change
+                Language</button>
+            <button class="btn btn-success w-100 my-2 p-2 shadow" style="border-radius: 10px;" onclick="changeVoice3()">🔄
+                Change
+                the Voice</button>
+
+        </div>
+
+        <div class="col-auto d-flex flex-column align-items-center text-white border rounded shadow px-4 py-3 my-4"
+            style="margin-right:20px;width: 300px; height: 500px; border-radius: 15px; background: #8f81d6;">
+
+            <div class="tts_1">
+                <h5 class="text-center mb-3 text-dark fw-bold">🔊Weather for Tommorrow</h5>
+            </div>
+            <div class="tts3_icon"></div>
+            <button class="btn btn-warning w-100 my-2 p-2 shadow" style="border-radius: 10px;" onclick="readWeatherReport2()">📢
+                Listen Now</button>
+            <button class="btn btn-info w-100 my-2 p-2 shadow" style="border-radius: 10px;" onclick="stopWeatherSpeech2()">🌍
+                Pause</button>
+            <button class="btn btn-danger w-100 my-2 p-2 shadow" style="border-radius: 10px;" onclick="toggleLanguage2()">Change
+                Language</button>
+            <button class="btn btn-success w-100 my-2 p-2 shadow" style="border-radius: 10px;" onclick="changeVoice2()">🔄 Change
+                the Voice</button>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+        <!-- Weather information -->
+        <div class="container-fluid p-1">
+            <div class="row g-2">
+                <!-- Left Column -->
+                <div class="col-lg-6 col-md-12">
+                    <div class="container-custom bg p-3 mb-4 weather-box">
+                        <!-- <div class="container-custom bg text-black p-3 mb-4"> -->
+                        <h5 class="text-center text-success">Weather Analysis Smart Agriculture System</h5>
+                        <img src="/images/cont2.png" class="img-fluid border border-success rounded"
+                            alt="Weather Image">
+                        <!-- </div> -->
+                    </div>
+
+                    <!-- //For Hourly Weather Forecasting -->
+                    <div class="responsive-div p-4 text-center flex-fill bg-light border rounded shadow mt-4 mx-3">
+                        <strong class="hourlyData"> Hourly Weather Forecast</strong>
+                        <div
+                            class="row flex-nowrap overflow-scroll border border-primary rounded bg-white shadow p-3 parentCont">
+
+                            <!-- Container 1 -->
+                            <div class="col-auto mx-3 bg-info  border rounded d-flex flex-column justify-content-center align-items-center shadow square-container c1"
+                                style="height: 300px; width: 150px;">
+                                <i class="bi bi-cloud-sun display-6 mb-2 c1_img"></i>
+                                <h6 class="text-center c1Info">Weather Info</h6>
+                                <p class="text-center small c1Info2">Temp, humidity, and more.</p>
+                            </div>
+
+                            <!-- Container 2 -->
+                            <div class="col-auto mx-3 bg-success text-white border rounded d-flex flex-column justify-content-center align-items-center shadow square-container"
+                                style="height: 300px; width: 150px;">
+                                <i class="bi bi-droplet-fill display-6 mb-2"></i>
+                                <h6 class="text-center">Irrigation</h6>
+                                <p class="text-center small">Optimal water usage.</p>
+                            </div>
+
+                            <!-- Container 3 -->
+                            <div class="col-auto mx-3 bg-primary text-white border rounded d-flex flex-column justify-content-center align-items-center shadow square-container"
+                                style="height: 300px; width: 150px;">
+                                <i class="bi bi-thermometer-sun display-6 mb-2"></i>
+                                <h6 class="text-center">Temperature</h6>
+                                <p class="text-center small">Daily and hourly updates.</p>
+                            </div>
+
+                            <!-- Container 4 -->
+                            <div class="col-auto mx-3 bg-warning text-dark border rounded d-flex flex-column justify-content-center align-items-center shadow square-container"
+                                style="height: 300px; width: 150px;">
+                                <i class="bi bi-geo-alt-fill display-6 mb-2"></i>
+                                <h6 class="text-center">Location</h6>
+                                <p class="text-center small">GPS-based weather.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container-custom weather-box bg text-black p-3 mb-4 c3graphs ">
+                        <h5 class="text-center text-success">Weather Analysis Smart Agriculture System</h5>
+                        <img src="/images/cont1.png" class="img-fluid border border-success rounded"
+                            alt="Weather Image">
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="col-lg-6 col-md-12">
+                    <div class="container-custom weather-box bg text-black p-3 mb-4 c2Graphs">
+                        <h5 class="text-center text-success">Weather Analysis Smart Agriculture System</h5>
+                        <img src="/images/cont3.png" class="img-fluid border border-success rounded" alt="Weather Image">
+                    </div>
+
+                    <!-- //For Hourly Weather Forecasting -->
+                    <div class="responsive-div p-4 text-center flex-fill bg-light border rounded shadow mt-4 mx-3">
+                        <strong class="hourlyData1"> Hourly Weather Forecast</strong>
+                        <div
+                            class="row flex-nowrap overflow-scroll border border-primary rounded bg-white shadow p-3 parentCont1">
+
+                            <!-- Container 1 -->
+                            <div class="col-auto mx-3 bg-info text-dark border rounded d-flex flex-column justify-content-center align-items-center shadow square-container c1"
+                                style="height: 300px; width: 150px;">
+                                <i class="bi bi-cloud-sun display-6 mb-2 c1_img"></i>
+                                <h6 class="text-center c1Info">Weather Info</h6>
+                                <p class="text-center small c1Info2">Temp, humidity, and more.</p>
+                            </div>
+
+                            <!-- Container 2 -->
+                            <div class="col-auto mx-3 bg-success text-white border rounded d-flex flex-column justify-content-center align-items-center shadow square-container"
+                                style="height: 300px; width: 150px;">
+                                <i class="bi bi-droplet-fill display-6 mb-2"></i>
+                                <h6 class="text-center">Irrigation</h6>
+                                <p class="text-center small">Optimal water usage.</p>
+                            </div>
+
+                            <!-- Container 3 -->
+                            <div class="col-auto mx-3 bg-primary text-white border rounded d-flex flex-column justify-content-center align-items-center shadow square-container"
+                                style="height: 300px; width: 150px;">
+                                <i class="bi bi-thermometer-sun display-6 mb-2"></i>
+                                <h6 class="text-center">Temperature</h6>
+                                <p class="text-center small">Daily and hourly updates.</p>
+                            </div>
+
+                            <!-- Container 4 -->
+                            <div class="col-auto mx-3 bg-warning text-dark border rounded d-flex flex-column justify-content-center align-items-center shadow square-container"
+                                style="height: 300px; width: 150px;">
+                                <i class="bi bi-geo-alt-fill display-6 mb-2"></i>
+                                <h6 class="text-center">Location</h6>
+                                <p class="text-center small">GPS-based weather.</p>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                    <div class="container-custom weather-box bg text-black p-3 c4graphs">
+                        <h5 class="text-center text-success">Weather Analysis Smart Agriculture System</h5>
+                        <img src="/images/cont4.png" class="img-fluid border border-success rounded"
+                            alt="Weather Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- //For Daily Weather Forecasting -->
+        <div class="responsive-div p-4 text-center flex-fill bg-light border rounded shadow mt-4 mx-3">
+            <strong>Daily Weather Forecast For 16 Days</strong>
+            <div class="row flex-nowrap overflow-scroll border border-primary rounded bg-white shadow p-3 parentCont2">
+                <!-- Container 1 -->
+                <div class="col-auto mx-3 bg-info text-dark border rounded d-flex flex-column justify-content-center align-items-center shadow square-container c1"
+                    style="height: 500px; width: 250px;">
+                    <i class="bi bi-cloud-sun display-6 mb-2 c1_img"></i>
+                    <h6 class="text-center c1Info">Weather Info</h6>
+                    <p class="text-center small c1Info2">Temp, humidity, and more.</p>
+                </div>
+
+                <!-- Container 2 -->
+                <div class="col-auto mx-3 bg-success text-white border rounded d-flex flex-column justify-content-center align-items-center shadow square-container"
+                    style="height: 500px; width: 250px;">
+                    <i class="bi bi-droplet-fill display-6 mb-2"></i>
+                    <h6 class="text-center">Irrigation</h6>
+                    <p class="text-center small">Optimal water usage.</p>
+                </div>
+
+                <!-- Container 3 -->
+                <div class="col-auto mx-3 bg-primary text-white border rounded d-flex flex-column justify-content-center align-items-center shadow square-container"
+                    style="height: 500px; width: 250px;">
+                    <i class="bi bi-thermometer-sun display-6 mb-2"></i>
+                    <h6 class="text-center">Temperature</h6>
+                    <p class="text-center small">Daily and hourly updates.</p>
+                </div>
+
+                <!-- Container 4 -->
+                <div class="col-auto mx-3 bg-warning text-dark border rounded d-flex flex-column justify-content-center align-items-center shadow square-container"
+                    style="height: 500px; width: 250px;">
+                    <i class="bi bi-geo-alt-fill display-6 mb-2"></i>
+                    <h6 class="text-center">Location</h6>
+                    <p class="text-center small">GPS-based weather.</p>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- //For seasonal weather forecasting -->
+        <div class="responsive-div p-4 text-center flex-fill bg-light border rounded shadow mt-4 mx-3 ">
+            Seasonal Weather Forecast
+            <div class="row flex-nowrap overflow-scroll border border-primary rounded bg-white shadow p-3 parentCont2 graphSeason">
+
+            </div>
+        </div>
+
+        <%-include("cropMonitor");%>
+        <%- include('footer') %>;
+
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+            <script src="/js/script.js"></script>
+            <script src="/js/weather1.js"></script>
+            <script src="/js/weather2.js"></script>
+            <script src="/js/weather3.js"></script>
+            <!-- <script src="/js/newreport.js"></script> -->
+            <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</body>
+
+</html>

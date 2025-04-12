@@ -1,0 +1,263 @@
+<!doctype html>
+<html  lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Navbar Example</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/utility.css">
+</head>
+
+<body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGRISUPPORT-Smart Agriculture</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="nav_main">
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm py-3" style="background-color: #e0f7fa;">
+        <div class="container-fluid">
+            <!-- Sidebar Icon -->
+            <button class="btn btn-light me-2 border-0" id="sidebarToggle" onclick="openNav()">
+                <i class="bi bi-list"></i>
+            </button>
+            <!-- Brand -->
+            <a class="navbar-brand fs-1 fw-bold logo1" href="#">AgriSupport Mitra</a>
+            <!-- Toggler for smaller screens -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navbar Items -->
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active fs-5 text-dark" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-5 text-dark" href="#">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fs-5 text-dark" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <% if (isAuthenticated) { %>
+                            <a class="nav-link fs-5 text-dark" href="/Contact/us">Contact Us</a>
+                            <% } else { %>
+                                <a href="http://localhost:3000/auth/login?redirect=/cropMonitoring/Crop/DiseasePrediction"
+                                    class="nav-link fs-5 text-dark">Contact Us</a>
+                                <% } %>
+
+                        <!-- <a class="nav-link fs-5 text-dark" href="/Contact/us">Contact Us</a> -->
+                    </li>
+
+                    <% if (!isAuthenticated) { %>
+                        <li class="nav-item">
+                            <a class="nav-link fs-5 text-white bg-success rounded-pill px-3 py-2 mx-2 shadow-lg"
+                                href="/login&registration" style="transition: background-color 0.3s;">
+                                Login
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fs-5 text-white bg-warning rounded-pill px-3 py-2 mx-2 shadow-lg"
+                                href="/login&registration" style="transition: background-color 0.3s;">
+                                Register
+                            </a>
+                        </li>
+                        <% } else { %>
+                            <li>
+                                <div class="fs-5 text-secondary-emphasis">
+                                    <% if (isAuthenticated && nameOfuser) { %>
+                                        <!-- Use the user ID stored in the session for the link -->
+                                         <button class="logoicon">
+                                        <a href="/dashboard/<%= userId %>"
+                                            class="d-inline-block text-white text-center shadow-lg"
+                                            style="border-color: hsl(11, 100%, 60%);   width: 60px; height: 50px; font-size: 1.3em; transition: transform 0.3s;"></a>
+                                            </button>
+                                           <span class="fw-bold"><%= nameOfuser[0] %> </span><!-- Display the first letter of the user's name -->
+                                        <!-- </a> -->
+                                        <% } %>
+                                </div>
+
+                            </li>
+                            <li class="nav-item">
+                                <form action="/auth/logout" method="POST" style="display:inline;">
+                                <button type="submit"
+                                        class="btn fs-5 text-white px-3 py-2 shadow-lg bgLogout"
+                                        style="transition: background-color 0.3s, transform 0.3s;">
+                                        <!-- <div class="bgLogout"></div> -->
+                                    </button>
+                                    <!-- </div> -->
+                                </form>
+                            </li>
+                            <% } %>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+    <!-- //navbar2 -->
+    <nav class="navbar navbar-expand " style="background-color: #ff9203;">
+        <div class="container-fluid">
+
+            <!-- Navbar Items -->
+            <ul class="navbar-nav flex-row flex-wrap w-100 justify-content-start">
+                <li class="nav-item me-3">
+                    <a class="nav-link active fw-bold" aria-current="page" href="http://localhost:3000/weather/weatherDisplay">Weather Analysis</a>
+                </li>
+                <li class="nav-item me-3">
+                    <a class="nav-link active fw-bold" aria-current="page" href="http://localhost:3000/cropMonitoring/Crop">Crop-Monitoring</a>
+                </li>
+                <li class="nav-item me-3">
+                    <a class="nav-link active fw-bold" aria-current="page" href="http://localhost:3000/weather/news">Weather Alerts And Updates</a>
+                </li>
+                <li class="nav-item me-3">
+                    <a class="nav-link active fw-bold" aria-current="page" href="http://localhost:3000/cropMonitoring/crop/Community">Community Section</a>
+                </li>
+                <li class="nav-item me-3">
+
+                </li>
+                <li class="nav-item me-3">
+
+                </li>
+                <li class="nav-item me-3">
+
+                </li>
+                <li class="nav-item me-3">
+                    <div>
+
+                    </div>
+                </li>
+
+                <li class="nav-item me-3">
+                    <div></div>
+                </li>
+                <li>
+                    <!-- Search Bar -->
+                    <form class="d-flex ms-auto stick-right">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success btn2 fw-bold text-white" style="background-color: #167857;" type="submit">Search</button>
+                    </form>
+                </li>
+                    <div id="google_translate_icon" onclick="toggleLanguage()">
+                        <img id="translate_img" src="/images/translate.gif"
+                            alt="Translate">
+                    </div>
+
+
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+<div class="sidebar" id="mySidebar"
+    style="width: 25vw; height: 100vh; background: #f8f9fa; box-shadow: 3px 0 10px rgba(0,0,0,0.1); overflow-y: auto; position: fixed; left: 0; top: 0; z-index: 1000; padding: 20px; display: flex; flex-direction: column;">
+    <span class="close-btn text-danger" onclick="closeNav()"
+        style="cursor: pointer; font-size: 1.5rem; align-self: flex-end;">
+        <i class="bi bi-x-octagon"></i>
+    </span>
+
+    <% if (isAuthenticated && nameOfuser) { %>
+        <!-- User Info -->
+        <div class="text-center mb-4 p-3 shadow-sm rounded bg-white">
+            <div class="d-flex justify-content-center align-items-center mb-2">
+                <div class="rounded-circle bg-primary text-white d-flex justify-content-center align-items-center"
+                    style="width: 60px; height: 60px; font-size: 1.5rem; font-weight: bold;">
+                    <%= nameOfuser.charAt(0).toUpperCase() %>
+                </div>
+            </div>
+            <h4 class="text-dark fw-bold">👤 Welcome, <span id="username1"><%- nameOfuser %></span></h4>
+        </div>
+        <div id="lottie-container"></div>
+        <!-- Action Buttons -->
+        <div class="d-flex flex-column gap-3">
+            <button class="btn btn-primary py-3 fw-bold shadow-sm rounded"
+                onclick="window.open('http://localhost:3000/cropMonitoring/crop/Community', '_blank')">
+                Community Section
+            </button>
+            <button class="btn btn-success py-3 fw-bold shadow-sm rounded"
+                onclick="window.open('http://localhost:3000/cropMonitoring/detailed/report', '_blank')">
+                Detailed Insights</button>
+            <button class="btn btn-warning py-3 fw-bold shadow-sm rounded">Experts Talk</button>
+            <button class="btn btn-danger py-3 fw-bold shadow-sm rounded">❓ Help & Support</button>
+        </div>
+
+        <!-- User Searches List -->
+        <div class="mt-4">
+            <h5 class="text-success fw-bold">🔍 Previous Searches</h5>
+            <ul id="search-history1" class="list-unstyled bg-white p-3 rounded shadow-sm w-100"
+                style="max-height: 60vh; overflow-y: auto; border: 1px solid #ddd;">
+                <li class="text-muted text-center">No searches yet...</li>
+            </ul>
+        </div>
+        <% } else { %>
+            <div class="text-center mb-4 p-3 shadow-sm rounded bg-white">
+                <h4 class="text-dark fw-bold">Welcome, Guest</h4>
+                <p class="text-muted">Please log in to access more features.</p>
+                <button class="btn btn-primary w-100 shadow-sm" onclick=window.location.href="http://localhost:3000/auth/login">Login</button>
+            </div>
+            <% } %>
+
+                <div class="mt-4">
+                    <a href="#" class="btn btn-outline-dark w-100 my-2 py-2 shadow-sm rounded">🏠 Home</a>
+                    <a href="#" class="btn btn-outline-dark w-100 my-2 py-2 shadow-sm rounded">📜 About</a>
+                    <a href="#" class="btn btn-outline-dark w-100 my-2 py-2 shadow-sm rounded">🛠 Services</a>
+                    <a href="#" class="btn btn-outline-dark w-100 my-2 py-2 shadow-sm rounded">📞 Contact</a>
+                </div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="/js/script.js"></script>
+    <!-- <script src="/js/crop.js"></script> -->
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+    <script>
+        var animation = lottie.loadAnimation({
+            container: document.getElementById("lottie-container"), // Target container
+            renderer: "svg", // Supports 'canvas' and 'html' too
+            loop: true, // Runs infinitely
+            autoplay: true, // Starts automatically
+            path: "/SVG/Animation - 1741777362737.json" // 🔥 Replace with your Lottie JSON file path
+        });
+        function toggleLanguage() {
+                let currentLang = document.documentElement.lang || "en"; // Get current language
+                let newLang = currentLang === "en" ? "hi" : "en"; // Toggle between English & Hindi
+
+                // Set language
+                document.cookie = `googtrans=/auto/${newLang}`;
+                document.documentElement.lang = newLang;
+
+                // Reload to apply translation
+                location.reload();
+            }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.color {
+    color: rgb(107, 1, 206);
+}
+
+.margintop-10 {
+    margin-top: 10px;
+}
+
+.margin_b {
+    margin-bottom: 20px;
+}
+.color-violet {
+    color: rgb(107, 1, 206);
+}
+
+.bg-FF5733 {
+    background-color: #FF5733;
+}
+
+.bg-33FF57 {
+    background-color: #33FF57;
+}
+
+.bg-3357FF {
+    background-color: #3357FF;
+}
+
+.bg-F1C40F {
+    background-color: #F1C40F;
+}
+
+.bg-8E44AD {
+    background-color: #8E44AD;
+}
+
+.bg-E74C3C {
+    background-color: #E74C3C;
+}

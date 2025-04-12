@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FarmSmart - Agricultural Portal</title>
+
+    <!-- Bootstrap + Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="/CSS/style.css" />
+    <link rel="stylesheet" href="/CSS/utility.css" />
+
+    <style>
+        :root {
+            --primary-green: #3a7d44;
+            --secondary-green: #689f38;
+            --light-green: #f1f8e9;
+            --dark-green: #1b5e20;
+            --accent-teal: #26a69a;
+            --neutral-beige: #f5f5f1;
+            --sky-blue: #4fc3f7;
+            --earth-brown: #6d4c41;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--neutral-beige);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(90deg, rgb(91, 214, 91),#047908,  rgb(144, 249, 144));
+            color: white;
+            padding: 2.5rem 0;
+            border-radius: 0 0 25px 25px;
+            box-shadow: 0 5px 15px var(--shadow);
+            text-align: center;
+            margin-top:30px;
+        }
+
+        .header .logo {
+            height: 60px;
+            margin-bottom: 10px;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        }
+
+        .header h1 {
+            font-weight: 700;
+            font-size: 2.2rem;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .feature-section {
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            box-shadow: 0 3px 10px var(--shadow);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--dark-green);
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-teal);
+            border-radius: 2px;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .feature-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            background: white;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 0.5s ease forwards;
+            opacity: 0;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-card .card-icon {
+            font-size: 2.7rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .feature-card .card-text {
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .btn-farmer {
+            background: white;
+            color: var(--dark-green);
+            border-radius: 30px;
+            padding: 8px 20px;
+            font-weight: 600;
+            border: none;
+            transition: all 0.3s;
+            box-shadow: 0 2px 5px var(--shadow);
+        }
+
+        .btn-farmer:hover {
+            background-color: #f1f1f1;
+            transform: scale(1.05);
+        }
+
+        /* Themed cards */
+        .weather-card {
+            background: linear-gradient(135deg, var(--sky-blue), #0288d1);
+        }
+
+        .disease-card {
+            background: linear-gradient(135deg, #7cb342, #aed581);
+        }
+
+        .yield-card {
+            background: linear-gradient(135deg, var(--earth-brown), #8d6e63);
+        }
+
+        .community-card {
+            background: linear-gradient(135deg, var(--accent-teal), #00897b);
+        }
+
+        .support-card {
+            background: linear-gradient(135deg, #5d8a66, var(--primary-green));
+        }
+
+        .dashboard-card {
+            background: linear-gradient(135deg, #78909c, #546e7a);
+        }
+
+        .speech-bubble {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary-green);
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+
+        .speech-bubble:hover {
+            transform: scale(1.1);
+            background-color: var(--dark-green);
+        }
+
+        .speech-bubble i {
+            font-size: 1.5rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .feature-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .feature-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .feature-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .feature-card:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .feature-card:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .feature-card:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.75rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <%- include("navbar"); %>
+
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <img src="/SVG/tea.png" class="logo" alt="FarmSmart Logo">
+                <h1>AgriSupport-Mitra Agricultural Portal</h1>
+                <p class="lead">Empowering farmers with intelligent solutions</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="container mt-4">
+            <!-- Weather Section -->
+            <div class="feature-section">
+                <h2 class="section-title"><i class="fas fa-cloud-sun me-2"></i> Weather Services</h2>
+                <div class="card-container">
+                    <div class="feature-card weather-card">
+                        <div class="card-icon"><i class="fas fa-cloud-sun"></i></div>
+                        <h3 class="card-title">Local Weather</h3>
+                        <p class="card-text">Real-time weather updates for your farm location</p>
+                        <a href="/weather/weatherDisplay" class="btn btn-farmer">View Weather</a>
+                    </div>
+
+                    <div class="feature-card weather-card">
+                        <div class="card-icon"><i class="fas fa-seedling"></i></div>
+                        <h3 class="card-title">Crop-Specific Reports</h3>
+                        <p class="card-text">Weather impact analysis for your specific crops</p>
+                        <a href="/weather/weatherDetail" class="btn btn-farmer">Get Reports</a>
+                    </div>
+
+                    <div class="feature-card weather-card">
+                        <div class="card-icon"><i class="fas fa-newspaper"></i></div>
+                        <h3 class="card-title">Weather News</h3>
+                        <p class="card-text">Latest agricultural weather forecasts and alerts</p>
+                        <a href="/weather/news" class="btn btn-farmer">Read News</a>
+                    </div>
+
+                    <div class="feature-card weather-card">
+                        <div class="card-icon"><i class="fas fa-volume-up"></i></div>
+                        <h3 class="card-title">Voice Weather</h3>
+                        <p class="card-text">Listen to weather updates hands-free</p>
+                        <a href="/weather/weatherDisplay" class="btn btn-farmer">Listen Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Crop Health Section -->
+            <div class="feature-section">
+                <h2 class="section-title"><i class="fas fa-leaf me-2"></i> Crop Health</h2>
+                <div class="card-container">
+                    <div class="feature-card disease-card">
+                        <div class="card-icon"><i class="fas fa-bug"></i></div>
+                        <h3 class="card-title">Disease Detection</h3>
+                        <p class="card-text">Upload images to identify crop diseases</p>
+                        <a href="http://localhost:3000/cropMonitoring/Crop" class="btn btn-farmer">Detect Now</a>
+                    </div>
+
+                    <div class="feature-card disease-card">
+                        <div class="card-icon"><i class="fas fa-file-medical"></i></div>
+                        <h3 class="card-title">Disease Reports</h3>
+                        <p class="card-text">View historical disease patterns</p>
+                        <a href="http://localhost:3000/cropMonitoring/Crop" class="btn btn-farmer">View Reports</a>
+                    </div>
+
+                    <div class="feature-card yield-card">
+                        <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3 class="card-title">Yield Prediction</h3>
+                        <p class="card-text">Estimate your crop yields with intelligent forecasting</p>
+                        <a href="http://localhost:3000/cropMonitoring/Crop" class="btn btn-farmer">Predict Yield</a>
+                    </div>
+                </div>
+
+                <!-- Community Section -->
+                <div class="feature-section">
+                    <h2 class="section-title"><i class="fas fa-people-group me-2"></i> Community & Forums</h2>
+                    <div class="card-container">
+                        <div class="feature-card community-card">
+                            <div class="card-icon"><i class="fas fa-comments"></i></div>
+                            <h3 class="card-title">Discussion Forum</h3>
+                            <p class="card-text">Ask questions, share insights, and learn from other farmers</p>
+                            <a href="http://localhost:3000/cropMonitoring/Crop" class="btn btn-farmer">Join Forum</a>
+                        </div>
+
+                        <div class="feature-card community-card">
+                            <div class="card-icon"><i class="fas fa-bullhorn"></i></div>
+                            <h3 class="card-title">IMD Advisories</h3>
+                            <p class="card-text">View important bulletins and advisories from IMD</p>
+                            <a href="http://localhost:3000/cropMonitoring/Crop" class="btn btn-farmer">Check Advisories</a>
+                        </div>
+
+                        <div class="feature-card community-card">
+                            <div class="card-icon"><i class="fas fa-users"></i></div>
+                            <h3 class="card-title">Farmer Network</h3>
+                            <p class="card-text">Connect with farmers near you and across regions</p>
+                            <a href="http://localhost:3000/cropMonitoring/Crop" class="btn btn-farmer">Explore Network</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Help & Support Section -->
+                <div class="feature-section">
+                    <h2 class="section-title"><i class="fas fa-hands-helping me-2"></i> Help & Support</h2>
+                    <div class="card-container">
+                        <div class="feature-card support-card">
+                            <div class="card-icon"><i class="fas fa-headset"></i></div>
+                            <h3 class="card-title">Live Chat</h3>
+                            <p class="card-text">Talk to our support chatbot for instant help</p>
+                            <a href="http://localhost:3000/chatbot/chat" class="btn btn-farmer">Chat Now</a>
+                        </div>
+
+                        <div class="feature-card support-card">
+                            <div class="card-icon"><i class="fas fa-book-open"></i></div>
+                            <h3 class="card-title">Knowledge Base</h3>
+                            <p class="card-text">Read guides, FAQs, and troubleshooting tips</p>
+                            <a href="http://localhost:3000/chatbot/chat" class="btn btn-farmer">Visit Help Center</a>
+                        </div>
+
+                        <div class="feature-card support-card">
+                            <div class="card-icon"><i class="fas fa-language"></i></div>
+                            <h3 class="card-title">Language Support</h3>
+                            <p class="card-text">Use the portal in your preferred regional language</p>
+                            <a href="http://localhost:3000/chatbot/chat" class="btn btn-farmer">Change Language</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dashboard Section -->
+                <div class="feature-section mb-5">
+                    <h2 class="section-title"><i class="fas fa-tachometer-alt me-2"></i> Your Dashboard</h2>
+                    <div class="card-container">
+                        <div class="feature-card dashboard-card">
+                            <div class="card-icon"><i class="fas fa-user"></i></div>
+                            <h3 class="card-title">My Profile</h3>
+                            <p class="card-text">Manage your account and farming preferences</p>
+                            <a href="http://localhost:3000/auth/login" class="btn btn-farmer">View Profile</a>
+                        </div>
+
+                        <div class="feature-card dashboard-card">
+                            <div class="card-icon"><i class="fas fa-clipboard-list"></i></div>
+                            <h3 class="card-title">Saved Records</h3>
+                            <p class="card-text">Access your previous reports and advisories</p>
+                            <a href="http://localhost:3000/auth/login" class="btn btn-farmer">Check Records</a>
+                        </div>
+
+                        <div class="feature-card dashboard-card">
+                            <div class="card-icon"><i class="fas fa-cogs"></i></div>
+                            <h3 class="card-title">Settings</h3>
+                            <p class="card-text">Control your data preferences and notifications</p>
+                            <a href="http://localhost:3000/auth/login" class="btn btn-farmer">Update Settings</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Chat Bubble -->
+        <div class="speech-bubble" onclick="location.href='http://localhost:3000/chatbot/chat'">
+            <i class="fas fa-comment-dots"></i>
+        </div>
+
+</body>
+
+</html>

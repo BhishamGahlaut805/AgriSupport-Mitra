@@ -1,0 +1,460 @@
+ /* body {
+     font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+     background-color: #f5f7fa;
+     margin: 0;
+     padding: 20px;
+     display: flex;
+     justify-content: center;
+ } */
+
+ .chat-container {
+    display: flex;
+    justify-content: center;
+     max-width: 500px;
+     width: 100%;
+     border-radius: 16px;
+     overflow: hidden;
+     box-shadow: 0 10px 30px rgba(0, 100, 0, 0.15);
+     background: #f8f9fa;
+     display: flex;
+     flex-direction: column;
+     height: 80vh;
+     border: 1px solid #e0e0e0;
+     margin:auto;
+     min-height: 700px;
+     margin-top:30px;
+     margin-bottom: 30px;;
+ }
+
+ .chat-header {
+     background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+     color: white;
+     padding: 16px 20px;
+     text-align: center;
+     position: relative;
+ }
+
+ .header-content {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 12px;
+ }
+
+ .header-icon {
+     width: 28px;
+     height: 28px;
+     filter: brightness(0) invert(1);
+ }
+
+ .chat-header h2 {
+     margin: 0;
+     font-size: 1.3rem;
+     font-weight: 600;
+     letter-spacing: 0.5px;
+ }
+
+ .weather-status {
+     position: absolute;
+     right: 20px;
+     top: 50%;
+     transform: translateY(-50%);
+     font-size: 0.9rem;
+     background: rgba(255, 255, 255, 0.2);
+     padding: 4px 8px;
+     border-radius: 12px;
+     display: flex;
+     align-items: center;
+     gap: 4px;
+ }
+
+ .chat-window {
+     flex: 1;
+     padding: 20px;
+     overflow-y: auto;
+     background-color: #f5f5f5;
+     background-image: radial-gradient(#e0e0e0 1px, transparent 1px);
+     background-size: 20px 20px;
+     display: flex;
+     flex-direction: column;
+     gap: 12px;
+ }
+
+ .message {
+     max-width: 80%;
+     padding: 12px 16px;
+     border-radius: 18px;
+     line-height: 1.4;
+     position: relative;
+     animation: fadeIn 0.3s ease-out;
+ }
+
+ @keyframes fadeIn {
+     from {
+         opacity: 0;
+         transform: translateY(10px);
+     }
+
+     to {
+         opacity: 1;
+         transform: translateY(0);
+     }
+ }
+
+ .message.user {
+     align-self: flex-end;
+     background: #4CAF50;
+     color: white;
+     border-bottom-right-radius: 4px;
+ }
+
+ .message.bot {
+     align-self: flex-start;
+     background: white;
+     color: #333;
+     border: 1px solid #e0e0e0;
+     border-bottom-left-radius: 4px;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+ }
+
+ .weather-response {
+     font-weight: 500;
+ }
+
+ .chat-input-container {
+     padding: 10px;
+     background: white;
+     border-top: 1px solid #e0e0e0;
+     font-size:20px;
+ }
+
+ .input-wrapper {
+     display: flex;
+     gap: 8px;
+     margin-bottom: 12px;
+ }
+
+ #userInput {
+     flex: 1;
+     padding: 12px 16px;
+     border: 1px solid #e0e0e0;
+     border-radius: 24px;
+     font-size: 1.1rem;
+     outline: none;
+     transition: all 0.3s;
+     background: #f8f9fa;
+ }
+
+ #userInput:focus {
+     border-color: #4CAF50;
+     box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+ }
+
+ .send-button {
+     width: 75px;
+     height: 75px;
+     border-radius: 50%;
+     border: none;
+     background: #4CAF50;
+     color: white;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     cursor: pointer;
+     transition: all 0.2s;
+ }
+
+ .send-button:hover {
+     background: #3d8b40;
+     transform: scale(1.05);
+ }
+
+ .send-button:active {
+     transform: scale(0.95);
+ }
+
+ .quick-actions {
+     display: flex;
+     gap: 8px;
+     overflow-x: auto;
+     padding: 10px;
+     background-color: #1b5e20;
+     display: flex;
+     justify-content: center;
+     /* scale:1.5; */
+ }
+
+ .quick-btn {
+     flex-shrink: 0;
+     padding: 8px 12px;
+     border-radius: 16px;
+     border: 1px solid #e0e0e0;
+     background: white;
+     font-size: 1.2rem;
+     cursor: pointer;
+     display: flex;
+     align-items: center;
+     gap: 4px;
+     transition: all 0.2s;
+ }
+
+ .quick-btn:hover {
+     background: #f1f8e9;
+     border-color: #c8e6c9;
+ }
+
+ /* Typing indicator styles */
+ .typing-indicator {
+     background: white !important;
+     padding: 10px 16px !important;
+ }
+
+ .typing-dots {
+     display: flex;
+     gap: 4px;
+     height: 20px;
+     align-items: center;
+ }
+
+ .typing-dots span {
+     width: 8px;
+     height: 8px;
+     background: #4CAF50;
+     border-radius: 50%;
+     display: inline-block;
+     animation: typingAnimation 1.4s infinite ease-in-out both;
+ }
+
+ .typing-dots span:nth-child(1) {
+     animation-delay: -0.32s;
+ }
+
+ .typing-dots span:nth-child(2) {
+     animation-delay: -0.16s;
+ }
+
+ @keyframes typingAnimation {
+
+     0%,
+     80%,
+     100% {
+         transform: scale(0.6);
+         opacity: 0.6;
+     }
+
+     40% {
+         transform: scale(1);
+         opacity: 1;
+     }
+ }
+
+ /* Disabled input state */
+ #userInput:disabled {
+     background: #f5f5f5;
+     cursor: not-allowed;
+ }
+
+ /* Weather card specific styles */
+ .farm-weather-card {
+     background: white;
+     border-radius: 12px;
+     padding: 16px;
+     margin: 8px 0;
+     border: 1px solid #e0e0e0;
+     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+ }
+
+ .weather-location h2 {
+     margin: 0 0 4px 0;
+     font-size: 1.5rem;
+     color: #2E7D32;
+ }
+
+ .weather-location p {
+     margin: 0;
+     color: #666;
+     font-size: 1.2rem;
+ }
+
+ .current-conditions {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin: 12px 0;
+ }
+
+ .weather-visual {
+     display: flex;
+     align-items: center;
+     gap: 12px;
+ }
+
+ .weather-icon {
+     font-size: 3rem;
+     width: 60px;
+     height: 60px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     border-radius: 50%;
+ }
+
+ .weather-rainy {
+     background-color: #bbdefb;
+     color: #1565c0;
+ }
+
+ .weather-cloudy {
+     background-color: #e3f2fd;
+     color: #546e7a;
+ }
+
+ .weather-sunny {
+     background-color: #fff9c4;
+     color: #f57f17;
+ }
+
+ .weather-snowy {
+     background-color: #e0f7fa;
+     color: #00838f;
+ }
+
+ .weather-stormy {
+     background-color: #d1c4e9;
+     color: #4527a0;
+ }
+
+ .weather-fair {
+     background-color: #f1f8e9;
+     color: #689f38;
+ }
+
+ .temp-display {
+     display: flex;
+     flex-direction: column;
+ }
+
+ .current-temp {
+     font-size: 2rem;
+     font-weight: bold;
+     color: #1b5e20;
+     line-height: 1;
+ }
+
+ .feels-like {
+     font-size: 1.1rem;
+     color: #607d8b;
+ }
+
+ .weather-details-grid {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 10px;
+     margin: 16px 0;
+ }
+
+ .detail-item {
+     display: flex;
+     align-items: center;
+     gap: 8px;
+     background: #f5f5f5;
+     padding: 8px;
+     border-radius: 8px;
+     font-size: 1rem;
+ }
+
+ .detail-icon {
+     font-size: 1.2rem;
+ }
+
+ .farming-tips {
+     background: #e8f5e9;
+     padding: 12px;
+     border-radius: 8px;
+     margin: 12px 0;
+     border-left: 4px solid #4caf50;
+ }
+
+ .farming-tips h3 {
+     margin: 0 0 8px 0;
+     color: #2e7d32;
+     font-size: 1.2rem;
+ }
+
+ .farming-tips p {
+     margin: 0;
+     font-size: 1.2rem;
+     line-height: 1.4;
+ }
+
+ .forecast-section {
+     margin-top: 16px;
+ }
+
+ .forecast-section h3 {
+     margin: 0 0 8px 0;
+     color: #2e7d32;
+     font-size: 1.2rem;
+ }
+
+ .forecast-days {
+     display: flex;
+     justify-content: space-between;
+     gap: 8px;
+ }
+
+ .forecast-day {
+     flex: 1;
+     text-align: center;
+     background: #f5f5f5;
+     padding: 8px;
+     border-radius: 8px;
+ }
+
+ .forecast-date {
+     font-weight: bold;
+     color: #1b5e20;
+     font-size: 1rem;
+ }
+
+ .forecast-icon {
+     font-size: 1.7rem;
+     margin: 4px 0;
+ }
+
+ .forecast-temp {
+     font-size: 1rem;
+ }
+
+ .forecast-temp span:first-child {
+     color: #e53935;
+     /* high temp */
+ }
+
+ .forecast-temp span:last-child {
+     color: #1e88e5;
+     /* low temp */
+ }
+
+ /* Responsive adjustments */
+ @media (max-width: 600px) {
+     .chat-container {
+         height: 90vh;
+         margin: 0;
+         border-radius: 0;
+     }
+
+     .header-icon {
+         width: 24px;
+         height: 24px;
+     }
+
+     .chat-header h2 {
+         font-size: 1.1rem;
+     }
+
+     .weather-status {
+         display: none;
+     }
+ }
+

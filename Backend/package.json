@@ -1,0 +1,33 @@
+{
+  "name": "agriculture_project",
+  "version": "1.0.0",
+  "description": "This is a Agriculture Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "BhishamGahlaut",
+  "license": "ISC",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.0",
+    "axios": "^1.7.9",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dialogflow-fulfillment": "^0.5.0",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "express-session": "^1.18.1",
+    "geocoder": "^0.2.3",
+    "mongodb": "^6.12.0",
+    "mongoose": "^8.9.2",
+    "multer": "^1.4.5-lts.1",
+    "node": "^23.5.0",
+    "node-geocoder": "^4.4.1",
+    "nodemailer": "^6.9.16",
+    "nodemon": "^3.1.7",
+    "puppeteer": "^24.5.0"
+  }
+}

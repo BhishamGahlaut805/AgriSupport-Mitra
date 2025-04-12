@@ -1,0 +1,12 @@
+pandas
+numpy
+plotly
+flask_cors
+requests
+bs4
+datetime
+pymongo
+Werkzeug
+tensorflow
+numpy
+Pillow

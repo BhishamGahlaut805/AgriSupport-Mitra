@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Agriculture Crop Monitoring</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/utility.css">
+    <link rel="stylesheet" href="/CSS/crop.css">
+</head>
+
+<body>
+
+
+        <!-- Features Section -->
+        <div class="container-fluid py-5 bg-light">
+            <div class="container-fluid">
+                <h2 class="text-center mb-5 fw-bold">Crop Monitoring Features</h2>
+                <div class="row g-3">
+                    <!-- Crop Monitoring -->
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="card h-100 shadow-sm border-0">
+                            <img src="/images/card1.png" class="card-img-top" alt="Crop Monitoring">
+                            <div class="card-body text-center">
+                                <h5 class="card-title fw-bold">Crop Monitoring</h5>
+                                <p class="card-text">Track the growth and health of your crops in real-time using
+                                    advanced sensors and AI.</p>
+                                <a href="#crop-monitoring" class="btn btn-outline-success">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Disease Prediction -->
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="card h-100 shadow-sm border-0">
+                            <img src="/images/bg1.png" class="card-img-top" alt="Disease Prediction">
+                            <div class="card-body text-center">
+                                <h5 class="card-title fw-bold">Disease Prediction</h5>
+                                <p class="card-text">Detect and predict crop diseases early to prevent losses and ensure
+                                    healthy yields.</p>
+                                    <% if (isAuthenticated) { %>
+                                        <a href="/cropMonitoring/Crop/DiseasePrediction"class="btn btn-outline-success">Learn More</a>
+                                    <% } else { %>
+                                        <a href="http://localhost:3000/auth/login?redirect=/cropMonitoring/Crop/DiseasePrediction"class="btn btn-outline-success">Learn More</a>
+                                    <% } %>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Yield Prediction -->
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="card h-100 shadow-sm border-0">
+                            <img src="/images/cont3.png" class="card-img-top" alt="Yield Prediction">
+                            <div class="card-body text-center">
+                                <h5 class="card-title fw-bold">Yield Prediction</h5>
+                                <p class="card-text">Accurately predict crop yields based on historical data and current
+                                    conditions.</p>
+                                    <% if (isAuthenticated) { %>
+                                        <a href="http://localhost:3000/cropMonitoring/cropYield" class="btn btn-outline-success">Learn More</a>
+                                        <% } else { %>
+                                            <a href="http://localhost:3000/auth/login?redirect=/cropMonitoring/Crop/DiseasePrediction"
+                                                class="btn btn-outline-success">Learn More</a>
+                                            <% } %>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Weather Reports -->
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="card h-100 shadow-sm border-0">
+                            <img src="/images/cont3.png" class="card-img-top" alt="Soil Health Analysis">
+                            <div class="card-body text-center">
+                                <h5 class="card-title fw-bold">Weather Report Analysis</h5>
+                                <p class="card-text">Analyze Weather conditions to optimize fertilization and improve crop
+                                    productivity.</p>
+                                <a href="http://localhost:3000/weather/weatherDetail" class="btn btn-outline-success">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- About Section -->
+        <div class="container-fluid py-5" style="background-color: #f8f9fa;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 py-10">
+                        <img src="/images/bg2.png" class="img-fluid rounded" alt="About Us">
+                    </div>
+                    <div class="col-md-6">
+                        <h2 class="fw-bold mb-4">About Crop Monitoring</h2>
+                        <p class="lead">Our Smart Agriculture System leverages cutting-edge technology to help farmers
+                            monitor their crops, predict diseases, and optimize yields. With real-time data and
+                            actionable insights, we aim to revolutionize farming practices.</p>
+                        <a href="#" class="btn btn-success btn-lg">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <!-- Scripts -->
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+            <script src="/js/script.js"></script>
+            <script src="/js/crop.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+ .card {
+     max-width: 400px;
+     padding: 20px;
+     border-radius: 10px;
+     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+ }
+
+ .gemini-insights {
+     margin-top: 20px;
+     padding: 15px;
+     background-color: #f8f9fa;
+     border-radius: 8px;
+     border-left: 4px solid #28a745;
+ }
+
+ .gemini-insights h4 {
+     color: #28a745;
+     margin-bottom: 10px;
+ }
+
+ .insight-content {
+     line-height: 1.6;
+ }
+
+ .gemini-insights {
+    margin:30px;
+    padding: 30px;;
+     background-color: #f9fff9;
+     border-left: 6px solid #4caf50;
+     padding: 16px;
+     margin-top: 16px;
+     border-radius: 10px;
+     font-family: "Segoe UI", sans-serif;
+ }
+
+ .gemini-insights h4 {
+     color: #2e7d32;
+ }
+
+ .gemini-insights .insight-content {
+     line-height: 1.6;
+     font-size: 20px;
+     color: #333;
+ }
