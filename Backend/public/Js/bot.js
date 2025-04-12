@@ -313,7 +313,7 @@ async function displayFarmWeather(latitude, longitude, locationName) {
   isFetchingWeather = true;
 
   try {
-    const apiKey = "2b0d2611a41f0127715cfef77b8c353a";
+    const apiKey = "KEY1";
     const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
     const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
 
