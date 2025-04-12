@@ -449,7 +449,7 @@ let currentWeatherData = "";
 let cityName= "";
 async function data_weather1(latitude, longitude, city) {
     try {
-        const apiKey = "2b0d2611a41f0127715cfef77b8c353a";
+        const apiKey = "KEY6";
         const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
         const response = await fetch(url);
         const data = await response.json();
