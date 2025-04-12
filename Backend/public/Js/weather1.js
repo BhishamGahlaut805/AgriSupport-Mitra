@@ -4,7 +4,7 @@ const output = document.getElementById('output');
 const reverseGeocode = async (latitude, longitude) => {
     try {
         // Use a reverse geocoding API like OpenCage or OpenStreetMap
-        const apiKey = 'ef8402c587fc4a6c89b14d8a271f8004'; // Replace with your API key
+        const apiKey = 'KEY5'; // Replace with your API key
         const url = `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${apiKey}`;
 
         const response = await fetch(url);
