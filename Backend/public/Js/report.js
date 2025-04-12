@@ -163,7 +163,7 @@ async function fetchCropAdvisoryXYZ(stateName) {
 }
 
 async function sendToGemini(advisoryText) {
-  const API_KEY = "AIzaSyBwAw7qquiXFpTxH_74x0WldA_r7jkh7mQ"; // 🔒 Replace with your actual key
+  const API_KEY = "KEY4"; // 🔒 Replace with your actual key
   const url =
     "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent?key=" +
     API_KEY;
